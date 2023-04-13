@@ -33,11 +33,11 @@ public class MoveCube : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(otherPlayer ? KeyCode.UpArrow : KeyCode.W))
+        if (Input.GetKey(otherPlayer ? KeyCode.UpArrow : KeyCode.W) && transform.position.y < 5)
         {
             rigidbody2D.velocity = speed * Vector2.up;
 
-        } else if (Input.GetKey(otherPlayer ? KeyCode.DownArrow : KeyCode.S))
+        } else if (Input.GetKey(otherPlayer ? KeyCode.DownArrow : KeyCode.S) && transform.position.y > -5)
         {
             rigidbody2D.velocity = speed * Vector2.down;
         } else
